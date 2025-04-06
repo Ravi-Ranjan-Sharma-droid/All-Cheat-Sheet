@@ -1,91 +1,67 @@
-{
-  // 🛠️ General Settings — because we pretend to be productive
-  "files.autoSave": "afterDelay",
-  "editor.mouseWheelZoom": true,
-  "editor.cursorBlinking": "expand", // Because blinking cursors are for cowards
-  "editor.fontFamily": "Mono Lisa", // She smiles at your syntax
-  "editor.fontSize": 18,
-  "editor.wordWrap": "on",
-  "terminal.integrated.fontSize": 18,
-  "editor.minimap.enabled": false, // We don’t need a tiny map, we’re already lost
+# 🚀 Linux Commands Cheat Sheet
 
-  // 💾 Formatters — because code should be prettier than our love life
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.formatOnType": true,
+> A futuristic, clean, and developer-friendly list of essential Linux commands.
 
-  // 📦 Language Specific Formatters
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+---
 
-  // 🌈 Bracket Madness
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "editor.guides.bracketPairsHorizontal": "active",
-  "editor.guides.highlightActiveBracketPair": true,
-  "editor.language.brackets": [],
-  "editor.language.colorizedBracketPairs": [],
+## 📁 Directory Commands
 
-  // 🎨 The Vibe Section — Dark themes heal wounds
-  "workbench.colorTheme": "One Dark Pro Night Flat",
-  "workbench.iconTheme": "vscode-icons",
+| 🧠 Command | 🔍 Description |
+|-----------|----------------|
+| `cd` | Navigate through files and directories |
+| `cd ..` | Move one directory up |
+| `cd -` | Move to your previous directory |
+| `pwd` | Show current working directory |
+| `mkdir [directory]` | Create a new directory |
+| `rmdir` | Delete a directory |
+| `scp [file.txt] [user@host:/path]` | Securely copy a file to a server |
+| `rsync -a /source/ /destination/` | Sync contents between directories |
 
-  // 👀 Editor Experience
-  "workbench.editor.enablePreview": false,
-  "editor.dropIntoEditor.preferences": [],
-  "editor.inlineSuggest.enabled": false,
-  "editor.quickSuggestions": {
-    "other": true,
-    "comments": false,
-    "strings": true
-  },
+---
 
-  // 🐍 PyMakr Config — for that IoT life
-  "pymakr.devices.configs": {
-    "562B026976": {
-      "autoConnect": "always",
-      "name": "",
-      "username": "micro",
-      "password": "python",
-      "hidden": false,
-      "rootPath": "/",
-      "adapterOptions": {}
-    }
-  },
-  "pymakr.misc.notifications": {
-    "A terminal for USB-Enhanced-SERIAL CH9102 (COM3) / unknown already exists.": "No and don't ask again",
-    "USB-Enhanced-SERIAL CH9102 (COM3) / unknown seems to be busy. Do you wish restart it in safe mode": "Restart in safe mode",
-    "Uploading a project will delete all existing files on the device before uploading the project folder. After uploading a project, you can start it by restarting the device. For faster uploads without file deletion, please put the device in dev mode.": "Don't show again",
-    "USB-Enhanced-SERIAL CH9102 (COM3) / Empty Project seems to be busy. Do you wish restart it in safe mode": "Don't show again",
-    "A terminal for USB-Enhanced-SERIAL CH9102 (COM3) / Empty Project already exists.": "Create new shared terminal"
-  },
+## 💾 Disk Usage Commands
 
-  // 🧠 Git Stuff — auto-fetch like a good boi
-  "git.autofetch": true,
-  "git.openRepositoryInParentFolders": "never",
-  "git.suggestSmartCommit": false,
+| 💽 Command | 🧠 Description |
+|-----------|----------------|
+| `df` | Display disk space usage |
+| `du` | Show space used by files/directories |
+| `du -ah` | Show all files/folders with size |
+| `du -sh` | Show total size of current folder |
+| `fdisk -l` | View disk partitions |
+| `findmnt` | Show mounted filesystems |
 
-  // 🔥 Live Preview & Server
-  "liveServer.settings.donotShowInfoMsg": true,
-  "livePreview.hostIP": "192.168.29.94",
-  "livePreview.notifyOnOpenLooseFile": false,
+---
 
-  // 🧪 Code Runner
-  "code-runner.runInTerminal": true,
+## 📄 File Commands
 
-  // 🧹 Files & Folders
-  "files.exclude": {
-    "/.git": false // Because sometimes you *do* want to see the abyss
-  },
+| 📦 Command | 📘 Description |
+|-----------|----------------|
+| `ls` | List directory contents |
+| `ls -a` | Show hidden files |
+| `ls -al` | Show detailed list view |
+| `cat [file]` | Show contents of a file |
+| `cat > [file]` | Create a new file |
+| `diff file1 file2` | Compare contents of two files |
+| `cat file1 file2 > file3` | Combine files into a new one |
+| `cat file | tr a-z A-Z > output.txt` | Convert text to UPPERCASE |
+| `tar cf archive.tar [file]` | Create a `.tar` archive |
+| `tar czf archive.tar.gz [folder]` | Create a gzip archive |
+| `tar xf archive.tar` | Extract `.tar` archive |
+| `gzip [file]` | Compress file with `.gz` |
+| `chmod [options] [file]` | Change permissions |
+| `chown [user]:[group] [file]` | Change ownership |
+| `rm [file]` | Delete a file |
 
-  // 🧻 Terminal Behavior
-  "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "terminal.integrated.defaultProfile.windows": "Git Bash"
-}
+---
+
+## 🌌 Tips
+
+```bash
+# Combine commands using &&
+mkdir project && cd project
+
+# Use man to get help with any command
+man rsync
+
+# View human-readable sizes
+du -sh *
