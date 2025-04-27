@@ -2,7 +2,7 @@
 
 ## 1. What is Ollama?
 
-### **Ollama** is a command-line tool that allows you to **Large Language Models (LLMs) locally.** Interact with team via CLI, API, or apps, and builds customized models with simple configurations.
+**Ollama** is a command-line tool that allows you to **Large Language Models (LLMs) locally.** Interact with team via CLI, API, or apps, and builds customized models with simple configurations.
 
 - **Private:** Runs offline.
 - **Fast:** Supports quantized models.
@@ -65,7 +65,7 @@ ollama run llama3
 
 ---
 
-## 5.Running Prompts
+## 5. Running Prompts
 
 ### Interactive Prompts
 
@@ -81,7 +81,7 @@ You'll get an interactive shell where you can type prompts.
 ollama run llama3 --prompt "summarize this text ..."
 ```
 
-### Streaming Output
+### 6. Streaming Output
 
 ```bash
 ollama run mistral --stream --prompt "What is linear accelerator I'm 12..."
