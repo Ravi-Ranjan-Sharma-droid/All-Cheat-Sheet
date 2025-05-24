@@ -91,4 +91,4 @@ ollama run mistral --stream --prompt "What is linear accelerator I'm 12..."
 
 ## Parameter Reference
 
-### coming soooon..
+### coming soon..
