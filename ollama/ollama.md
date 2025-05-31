@@ -81,14 +81,89 @@ You'll get an interactive shell where you can type prompts.
 ollama run llama3 --prompt "summarize this text ..."
 ```
 
-### 6. Streaming Output
+### Streaming Output
 
 ```bash
 ollama run mistral --stream --prompt "What is linear accelerator I'm 12..."
 ```
-
 ---
 
-## Parameter Reference
 
-### coming soon..
+## 6. Parameter Reference
+
+| Parameter        | Type   | Description                                    |
+| ---------------- | ------ | ---------------------------------------------- |
+| `temperature`    | Float  | Creativity (0.0 = deterministic, 1.0 = random) |
+| `top_k`          | Int    | Limit choices to top K tokens                  |
+| `top_p`          | Float  | Nucleus sampling (0.9 = top 90% prob.)         |
+| `num_predict`    | Int    | Max tokens to predict                          |
+| `stop`           | Array  | Stop sequences                                 |
+| `repeat_penalty` | Float  | Penalize repetition                            |
+| `seed`           | Int    | Reproducible generations                       |
+| `system`         | String | System prompt for behavior definition          |
+
+### Example
+
+```bash
+ollama run mistral --temperature 0.3 --top_k 50 --stop "<END>"
+```
+
+## 7. Modelfile (custom model)
+
+A Modelfile lets create personalized models.
+
+### Basic Template
+
+```Dockerfile
+FROM llama3
+SYSTEM "You are a math tutor."
+PARAMETER temperature 0.2
+```
+
+### Add File to the Model
+
+```Dockerfile
+FROM mistral
+ADAPTER ./mydata.txt
+```
+
+### Build it
+
+```bash
+ollama create tutor -ai -f Modelfile
+```
+
+## 7. API Usage (RESTful)
+
+Default server run at http://localhost:11434
+
+### Generate (Stateless)
+
+```bash
+curl http://localhost:11434/api/generate -d '{
+"model": "llama3",
+"prompt": "Write a short poem"
+}'
+```
+
+### Chat (Stateful)
+
+```bash
+curl http://localhost:11434/api/generate -d '{
+"model": "llama3",
+"message": [
+    {"role": "system", "content": "You're a helpful tutor"},
+    {"role": "user", "content": "Explain Newton's third law"}
+  ]
+}'
+```
+
+### API Endpoint
+
+| Endpoint      | Description           |
+| ------------- | --------------------- |
+| /api/generate | Stateless generation  |
+| /api/chat     | stateful dialogue     |
+| /api/tags     | List installed models |
+| /api/pull     | Pull a model          |
+| /api/delete   | Delete model          |
