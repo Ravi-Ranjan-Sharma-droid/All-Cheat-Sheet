@@ -238,3 +238,31 @@ Quantized model variants include:
 - Use smaller quantized models (`q4_0`) if low on RAM.
 - Enable **GPU acceleration** if possible (Ollama uses Metal on macOS).
 - Try **Mixtral** for ensemble responses (mixture of experts).
+
+## 14. Example Prompt Templates
+
+### Tutor Agent
+
+```bash
+ollama run llama3 --system "You're a brilliant teacher who explains concepts simply." --prompt "Explain entropy"
+```
+
+### Python Code Generator
+
+```bash
+ollama run codellama --prompt "Write a Python script to scrape weather data"
+```
+
+### Creative Storyteller
+
+```bash
+ollama run mistral --temperature 0.9 --prompt "Start a fantasy story about a warrior and a dragon"
+```
+
+---
+
+## 15. Model Creation Power Tips
+
+* Use `ADAPTER` in Modelfile to inject domain-specific knowledge.
+* Stack instructions with multiple `SYSTEM` or `PROMPT` lines.
+* Create a **chain of agents** using Ollama’s API and scripting logic.
