@@ -193,3 +193,48 @@ OLLAMA_HOST=/path/to/models
 ```bash
 ollama show llama3
 ```
+## 10. Model Types & Size
+
+| Model        | Use Case                  | Size      | Strength       |
+|--------------|----------------------------|-----------|----------------|
+| `llama3`     | General-purpose            | 4–8 GB    | Balanced       |
+| `mistral`    | Chat / reasoning           | 4 GB      | Very fast      |
+| `gemma`      | Science / logic            | 3.8 GB    | Clean output   |
+| `phi`        | Code-heavy / low RAM       | 2–4 GB    | Lightweight    |
+| `codellama`  | Code generation            | 6–12 GB   | Dev-friendly   |
+| `tinyllama`  | Minimal system             | ~1 GB     | Low-resource   |
+
+Quantized model variants include:
+
+- `q4_0`, `q4_K_M`, `q8_0` *(smaller to larger sizes)*
+
+
+## 11. Frontend & Tools
+
+| Tool                    | Description                                 |
+|-------------------------|---------------------------------------------|
+| Open WebUI              | Web interface for Ollama                    |
+| LM Studio               | GUI for model management                    |
+| Faraday.dev             | Beautiful local UI                          |
+| LangChain / LlamaIndex  | AI framework integration                    |
+| Text Generation WebUI   | Multi-backend GUI frontend                  |
+| Oobabooga               | Multi-model runner (supports Ollama)        |
+
+### 12. Use Cases
+
+- **Offline chatbots**
+- **Custom agents** (coding assistant, tutor, etc.)
+- **Private data analysis**
+- **Local GPT-4-like applications**
+- **Voice-to-AI via Whisper + Ollama**
+- **Integrate with automation tools** (like Node-RED, Zapier, etc.)
+
+---
+
+### 13. Optimization Tips
+
+- Use `repeat_penalty` ~1.2 to avoid repetition.
+- Keep `temperature` 0.2–0.6 for coherent outputs.
+- Use smaller quantized models (`q4_0`) if low on RAM.
+- Enable **GPU acceleration** if possible (Ollama uses Metal on macOS).
+- Try **Mixtral** for ensemble responses (mixture of experts).
