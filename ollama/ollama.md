@@ -152,8 +152,8 @@ curl http://localhost:11434/api/generate -d '{
 curl http://localhost:11434/api/generate -d '{
 "model": "llama3",
 "message": [
-    {"role": "system", "content": "You're a helpful tutor"},
-    {"role": "user", "content": "Explain Newton's third law"}
+    {"role": "system", "content": "You are a helpful tutor"},
+    {"role": "user", "content": "Explain Newtons third law"}
   ]
 }'
 ```
