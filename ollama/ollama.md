@@ -167,3 +167,29 @@ curl http://localhost:11434/api/generate -d '{
 | /api/tags     | List installed models |
 | /api/pull     | Pull a model          |
 | /api/delete   | Delete model          |
+
+## 9. Advance Uses
+
+### Run in background
+
+```bash
+ollama serve
+```
+
+### Run on Custom Port
+
+```bash
+OLLAMA_HOST=127.0.0.1:11435 ollama serve
+```
+
+### Set Model Directory
+
+```bash
+OLLAMA_HOST=/path/to/models
+```
+
+### Export Model Configuration
+
+```bash
+ollama show llama3
+```
