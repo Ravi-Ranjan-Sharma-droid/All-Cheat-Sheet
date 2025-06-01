@@ -213,12 +213,12 @@ Quantized model variants include:
 
 | Tool                    | Description                                 |
 |-------------------------|---------------------------------------------|
-| Open WebUI              | Web interface for Ollama                    |
-| LM Studio               | GUI for model management                    |
-| Faraday.dev             | Beautiful local UI                          |
-| LangChain / LlamaIndex  | AI framework integration                    |
-| Text Generation WebUI   | Multi-backend GUI frontend                  |
-| Oobabooga               | Multi-model runner (supports Ollama)        |
+| `Open WebUI`              | `Web interface for Ollama`                    |
+| `LM Studio`               | `GUI for model management`                    |
+| `Faraday.dev`             | `Beautiful local UI`                          |
+| `LangChain / LlamaIndex`  | `AI framework integration`                    |
+| `Text Generation WebUI`   | `Multi-backend GUI frontend`                  |
+| `Oobabooga`               | `Multi-model runner (supports Ollama)`        |
 
 ### 12. Use Cases
 
