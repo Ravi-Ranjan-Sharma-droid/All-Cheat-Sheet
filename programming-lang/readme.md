@@ -1500,7 +1500,6 @@ _Uses:_ Game scripting, embedded applications
 
 ```squirrel
 print("Hello, World!");
-}
 ```
 
 ### ChaiScript
@@ -1509,5 +1508,4 @@ _Uses:_ C++ embedded scripting
 
 ```chaiscript
 print("Hello, World!");
-}
 ```
