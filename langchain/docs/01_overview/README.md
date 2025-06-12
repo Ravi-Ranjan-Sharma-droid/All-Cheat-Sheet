@@ -14,22 +14,30 @@ LangChain is a framework designed to simplify the creation of applications using
 ## Architecture Overview
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Application   │────│   LangChain     │────│   LLM Provider  │
-│   Layer         │    │   Framework     │    │   (OpenAI, etc) │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         │              ┌─────────────────┐              │
-         │              │   Vector Store  │              │
-         │              │   (Pinecone,    │              │
-         │              │   ChromaDB)     │              │
-         │              └─────────────────┘              │
-         │                       │                       │
-    ┌─────────────────────────────────────────────────────────────┐
-    │                     Tools & Utilities                      │
-    │  • Document Loaders  • Memory Systems  • Evaluation       │
-    │  • Embeddings       • Prompt Templates • Monitoring       │
-    └─────────────────────────────────────────────────────────────┘
+┌────────────────────────┐
+│      Application       │
+│        Layer           │
+└────────────┬───────────┘
+             │
+             ▼
+┌────────────────────────┐
+│      LangChain         │
+│   (Orchestration Layer)│
+│   • Chains             │
+│   • Agents             │
+│   • Callbacks          │
+└────────────┬───────────┘
+             │
+             ▼
+┌────────────┬────────────┬────────────────────────────┐
+│ External   │ Vector     │ LangChain Modules          │
+│ LLMs /     │ Stores     │ • Document Loaders         │
+│ APIs       │ (FAISS,    │ • Embedding Models         │
+│ (OpenAI,   │ Pinecone)  │ • Prompt Templates         │
+│ Anthropic) │            │ • Memory Systems           │
+│            │            │ • Evaluation Tools         │
+└────────────┴────────────┴────────────────────────────┘
+
 ```
 
 The architecture of LangChain consists of several key layers:
